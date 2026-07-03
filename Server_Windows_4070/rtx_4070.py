@@ -12,7 +12,6 @@ import cv2
 import sys
 
 # ==========================================
-# 🛠 تله اول: دور زدن قفل امنیتی PyTorch
 _original_load = torch.load
 
 
@@ -23,7 +22,6 @@ def _patched_load(*args, **kwargs):
 
 torch.load = _patched_load
 
-# 🛠 تله دوم: حل مشکل ارور torchvision در GFPGAN و basicsr
 try:
     import torchvision.transforms.functional_tensor
 except ImportError:
@@ -35,11 +33,11 @@ except ImportError:
     sys.modules['torchvision.transforms.functional_tensor'] = dummy
 # ==========================================
 
-from gfpgan import GFPGANer  # حالا GFPGAN بدون ارور لود می‌شود!
+from gfpgan import GFPGANer 
 
 app = FastAPI(title="AI Voice, Translation & Ultra-LipSync Server")
 
-# ================= تنظیمات مسیرها =================
+# =================Route settings=================
 QWEN_MODEL_PATH = "./models/qwen2.5-1.5b-instruct-q8_0/qwen2.5-1.5b-instruct-q8_0.gguf"
 SPEAKER_WAV_PATH = "./speaker.wav"
 AVATAR_VIDEO_PATH = "./avatar.mp4"

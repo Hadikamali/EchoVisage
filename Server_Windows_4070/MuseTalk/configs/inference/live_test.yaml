@@ -1,0 +1,4 @@
+task_0:
+  video_path: "C:/Users/GwT/PycharmProjects/API_ART/avatar.mp4"
+  audio_path: "C:/Users/GwT/PycharmProjects/API_ART/temp_english.wav"
+  bbox_shift: 0

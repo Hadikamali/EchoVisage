@@ -12,7 +12,6 @@ import cv2
 import sys
 
 # ==========================================
-# 🛠 تله اول: دور زدن قفل امنیتی PyTorch
 _original_load = torch.load
 
 
@@ -23,7 +22,6 @@ def _patched_load(*args, **kwargs):
 
 torch.load = _patched_load
 
-# 🛠 تله دوم: حل مشکل ارور torchvision در GFPGAN و basicsr
 try:
     import torchvision.transforms.functional_tensor
 except ImportError:
